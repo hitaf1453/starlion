@@ -1,0 +1,51 @@
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1350, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1240, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1286, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1235, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1006, in _send_output
+    self.send(msg)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 946, in send
+    self.connect()
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 917, in connect
+    self.sock = self._create_connection(
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\socket.py", line 808, in create_connection
+    raise err
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 64, in get
+    with contextlib.closing(urlopen(
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 525, in open
+    response = self._open(req, data)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 542, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 502, in _call_chain
+    result = func(*args)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1379, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\urllib\request.py", line 1353, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 164, in load
+    browsers_dict[browser_key] = get_browser_versions(
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 120, in get_browser_versions
+    html = get(
+  File "C:\Users\pc\AppData\Local\Programs\Python\Python38\lib\site-packages\fake_useragent\utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
